@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="100px" height="100px"style="border:1px solid #d3d3d3;">
+  </body>
+  <script>
+    let Rectangle = function (width, height) {
+      this.width = width;
+      this.getWidth = function () {
+        return width;
+      };
+      this.height = height;
+      this.getHeight = function () {
+        return height;
+      };
+      this.getArea = function () {
+        return width * height;
+      };
+      this.around = function () {
+        return (width + height) * 2;
+      };
+    };
+    function createRectangle(){
+    var ctx = document.getElementById('myCanvas').getContext('2d')
+    let width = +prompt('nhap chieu rong');
+    let height = +prompt('nhap chieu dai')
+    var rectangle = new Rectangle(width, height);
+    ctx.beginPath();
+    ctx.strokestyle = "random"
+    ctx.rect( 5,5,(width), (height));
+    ctx.stroke();
+    }
+    createRectangle()
+  </script>
+</html>
